@@ -1,131 +1,150 @@
-Face Recognition and Categorization Tool
+# Face Recognition and Categorization
 
-This is a Python-based GUI application that uses face recognition to detect and categorize faces in images. The tool allows you to input a folder of images, add known faces for recognition, and categorize the images based on the detected faces. The categorized images are then saved in separate folders within the specified output directory.
-Features
+## Overview
+This project is a face recognition and categorization tool that allows users to identify and sort images based on known faces. It provides a graphical user interface (GUI) built using Tkinter and utilizes the `face_recognition` library for detecting and matching faces. The categorized images are stored in separate folders based on their recognized identities.
 
-    Face Detection: Detects faces in images using the face_recognition library.
+## Features
+- Detects and categorizes faces from images in a selected input folder.
+- Allows users to add known faces to compare against unknown images.
+- Organizes recognized images into separate folders based on identities.
+- Provides a user-friendly GUI with file browsing and progress tracking.
+- Uses an Everforest-inspired dark mode color scheme for a pleasant UI experience.
 
-    Face Categorization: Categorizes images into folders based on recognized faces.
+## Requirements
+### Dependencies
+Make sure you have the following Python libraries installed before running the application:
+```sh
+pip install opencv-python face-recognition numpy tkinter
+```
 
-    Known Faces: Allows you to add known faces for recognition.
+### Additional Requirements
+- A working webcam (optional for future enhancements).
+- Compatible image formats: `.png`, `.jpg`, `.jpeg`, `.bmp`, `.gif`.
 
-    User-Friendly GUI: Built with tkinter, the GUI is intuitive and easy to use.
+## How to Use
+### 1. Launch the Application
+Run the script using:
+```sh
+python script.py
+```
 
-    Dark Mode: The application uses the Everforest dark color scheme for a visually pleasing experience.
+### 2. Select Folders
+- Click "Browse" to choose an **input folder** containing images to process.
+- Click "Browse" to choose an **output folder** where categorized images will be saved.
 
-Requirements
+### 3. Add Known Faces
+- Click "Add Known Face" to select an image of a person you want to recognize.
+- The program will extract the face encoding and store it under the person's name.
 
-To run this application, you need the following Python packages:
+### 4. Run Face Recognition
+- Click "Run" to start processing images in the input folder.
+- The program will categorize images into separate folders based on recognized faces.
+- Unknown faces will be placed in an "Unknown" folder.
 
-    face_recognition
+## Folder Structure
+After running the program, the output folder will have the following structure:
+```
+output_folder/
+│── Person1/
+│   ├── image1.jpg
+│   ├── image2.jpg
+│── Person2/
+│   ├── image3.jpg
+│── Unknown/
+│   ├── image4.jpg
+```
 
-    numpy
+## Troubleshooting
+- If no faces are detected, ensure the images have clear, visible faces.
+- If the program crashes when adding a known face, make sure the selected image contains a recognizable face.
+- Ensure all required libraries are installed correctly.
 
-    opencv-python
+## Future Enhancements
+- Add real-time face detection using a webcam.
+- Improve accuracy with deep learning-based models.
+- Allow users to edit or remove known faces from the database.
 
-    tkinter
+## License
+This project is open-source under the MIT License. Feel free to modify and enhance it as needed.
 
-    shutil
+## Credits
+Developed using:
+- `face_recognition` for facial detection and recognition.
+- `OpenCV` for image processing.
+- `Tkinter` for the graphical user interface.
 
-    os
+# Face Recognition and Categorization
 
-You can install the required packages using pip:
-bash
-Copy
+## Overview
+This project is a face recognition and categorization tool that allows users to identify and sort images based on known faces. It provides a graphical user interface (GUI) built using Tkinter and utilizes the `face_recognition` library for detecting and matching faces. The categorized images are stored in separate folders based on their recognized identities.
 
-pip install face-recognition numpy opencv-python
+## Features
+- Detects and categorizes faces from images in a selected input folder.
+- Allows users to add known faces to compare against unknown images.
+- Organizes recognized images into separate folders based on identities.
+- Provides a user-friendly GUI with file browsing and progress tracking.
+- Uses an Everforest-inspired dark mode color scheme for a pleasant UI experience.
 
-How to Use
+## Requirements
+### Dependencies
+Make sure you have the following Python libraries installed before running the application:
+```sh
+pip install opencv-python face-recognition numpy tkinter
+```
 
-    Run the Application:
+### Additional Requirements
+- A working webcam (optional for future enhancements).
+- Compatible image formats: `.png`, `.jpg`, `.jpeg`, `.bmp`, `.gif`.
 
-        Execute the script using Python:
-        bash
-        Copy
+## How to Use
+### 1. Launch the Application
+Run the script using:
+```sh
+python script.py
+```
 
-        python face_recognition_app.py
+### 2. Select Folders
+- Click "Browse" to choose an **input folder** containing images to process.
+- Click "Browse" to choose an **output folder** where categorized images will be saved.
 
-    Select Input and Output Folders:
+### 3. Add Known Faces
+- Click "Add Known Face" to select an image of a person you want to recognize.
+- The program will extract the face encoding and store it under the person's name.
 
-        Click the "Browse" button next to "Input Folder" to select the folder containing the images you want to process.
+### 4. Run Face Recognition
+- Click "Run" to start processing images in the input folder.
+- The program will categorize images into separate folders based on recognized faces.
+- Unknown faces will be placed in an "Unknown" folder.
 
-        Click the "Browse" button next to "Output Folder" to select the folder where the categorized images will be saved.
+## Folder Structure
+After running the program, the output folder will have the following structure:
+```
+output_folder/
+│── Person1/
+│   ├── image1.jpg
+│   ├── image2.jpg
+│── Person2/
+│   ├── image3.jpg
+│── Unknown/
+│   ├── image4.jpg
+```
 
-    Add Known Faces:
+## Troubleshooting
+- If no faces are detected, ensure the images have clear, visible faces.
+- If the program crashes when adding a known face, make sure the selected image contains a recognizable face.
+- Ensure all required libraries are installed correctly.
 
-        Click the "Add Known Face" button to add images of known faces. The application will use these images to recognize and categorize faces in the input images.
+## Future Enhancements
+- Add real-time face detection using a webcam.
+- Improve accuracy with deep learning-based models.
+- Allow users to edit or remove known faces from the database.
 
-    Run Face Recognition:
+## License
+This project is open-source under the MIT License. Feel free to modify and enhance it as needed.
 
-        Click the "Run" button to start the face recognition and categorization process. The application will process all images in the input folder and categorize them based on the detected faces.
+## Credits
+Developed using:
+- `face_recognition` for facial detection and recognition.
+- `OpenCV` for image processing.
+- `Tkinter` for the graphical user interface.
 
-    View Results:
-
-        After the process is complete, the categorized images will be saved in separate folders within the output folder. Each folder will be named after the recognized face.
-
-Code Structure
-
-    detect_and_categorize_faces(image_path, output_folder, known_faces, known_names):
-
-        Detects faces in the given image and categorizes them based on known faces.
-
-    process_images_in_folder(input_folder, output_folder, known_faces, known_names):
-
-        Processes all images in the input folder and categorizes them based on detected faces.
-
-    FaceRecognitionApp:
-
-        The main GUI application class. It handles user input, known face addition, and the face recognition process.
-
-Color Scheme
-
-The application uses the Everforest dark color scheme:
-
-    Background: #2B3339
-
-    Foreground (text): #D5C9AB
-
-    Button Background: #475258
-
-    Button Text: #D5C9AB
-
-    Entry Background: #3C474D
-
-    Entry Text: #D5C9AB
-
-    Progress Bar Background: #475258
-
-    Progress Bar Foreground: #7FBBB3
-
-Example
-
-    Add Known Faces:
-
-        Add images of known faces (e.g., john.jpg, jane.jpg) using the "Add Known Face" button.
-
-    Select Input Folder:
-
-        Select a folder containing images with faces to be recognized.
-
-    Select Output Folder:
-
-        Choose a folder where the categorized images will be saved.
-
-    Run:
-
-        Click "Run" to start the process. The application will create folders named after the recognized faces (e.g., john, jane) in the output folder and save the categorized images there.
-
-Notes
-
-    Ensure that the images of known faces are clear and contain only one face for accurate recognition.
-
-    The application may take some time to process a large number of images.
-
-License
-
-This project is open-source and available under the MIT License. Feel free to modify and distribute it as needed.
-Acknowledgments
-
-    The face_recognition library by ageitgey for providing an easy-to-use face recognition API.
-
-    The Everforest color scheme for the beautiful dark mode design.
